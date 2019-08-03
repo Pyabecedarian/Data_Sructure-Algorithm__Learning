@@ -3,7 +3,7 @@
 This repo records the progress of learning "Data Structure and Algorithm in Python", task by task, along with some solutions on serval Problem Sets on [Leecode](https://leetcode-cn.com/profile/points/).
 
 
-## Task1: Array and List (2 days)
+## Task1: Array and List (2 days)  ---- (INCOMPLETE)
 - ***Array***:  Implement a array capable of dynamic scalling
   -  An array of *fixed* size, which supports "Add", "Delete" and "Edit" operations
   -  Merge two *ordered* array into one *ordered* array
