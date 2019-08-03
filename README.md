@@ -5,7 +5,7 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
 
 ## Task1: Array and List (2 days)
 - ***Array***:  Implement a array capable of dynamic scalling
-  -  An array of *fixed* size, which supports CUDA operations
+  -  An array of *fixed* size, which supports "Add", "Delete" and "Edit" operations
   -  Merge two *ordered* array into one *ordered* array
   -  Learn the concept of *Hash*, and complete the problem **"Two Sum"** on Leecode and **Happy Number** (optional)
   
