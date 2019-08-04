@@ -37,6 +37,14 @@ class LinkedListBase(object):
         self._head = None
         self._tail = None
 
+    def __str__(self):
+        s = '['
+        p = self._head
+        while p is not None:
+            s += ' ' + str(p.value)
+            p = p.next
+        return s + ' ]'
+
     def __len__(self):
         """Support python built-in len() function, return the length of the list. O(1)"""
         return self._len
@@ -59,6 +67,22 @@ class LinkedListBase(object):
             n += 2
         return p.value
 
+    def for_each(self, func, *args, **kwargs):
+        """Apply each element in the list to a function. O(n)"""
+        p = self._head
+        while p is not None:
+            p.value = func(p.value, *args, **kwargs)
+            p = p.next
+
+    def search(self, elem):
+        """Search a element whether or not in the List and return it's index. If not in the list, return -1. O(n)"""
+        p, n = self._head, 0
+        while p is not None:
+            if p.value == elem: return n
+            p = p.next
+            n += 1
+        return -1
+
 
 class LinkedList(LinkedListBase):
     """Implementation of LinkedList__single direction"""
@@ -68,14 +92,6 @@ class LinkedList(LinkedListBase):
 
         for elem in args:
             self.append(elem)
-
-    def __str__(self):
-        s = '['
-        p = self._head
-        while p is not None:
-            s += ' ' + str(p.value)
-            p = p.next
-        return s + ' ]'
 
     def prepend(self, elem):
         """Prepend the element as the first one in the list while keeping the order of structure. O(1)"""
@@ -136,22 +152,6 @@ class LinkedList(LinkedListBase):
             n += 1
         p.next = p.next.next
         self._len -= 1
-
-    def search(self, elem):
-        """Search a element whether or not in the List and return it's index. If not in the list, return -1. O(n)"""
-        p, n = self._head, 0
-        while p is not None:
-            if p.value == elem: return n
-            p = p.next
-            n += 1
-        return -1
-
-    def for_each(self, func, *args, **kwargs):
-        """Apply each element in the list to a function. O(n)"""
-        p = self._head
-        while p is not None:
-            p.value = func(p.value, *args, **kwargs)
-            p = p.next
 
     def __setitem__(self, i, elem):
         if i <= 0: return self.prepend(elem)
@@ -305,6 +305,17 @@ class CycleList(LinkedListBase):
 
 
 class BidirectionalLinkedList(LinkedListBase):
+    class Node(LinkedListBase.Node):
+        def __init__(self, value, __prev__, __next__):
+            super().__init__(value, __next__)
+            self.prev = __prev__
+
+            if __prev__ is not None:
+                __prev__.next = self
+
+            if __next__ is not None:
+                __next__.prev = self
+
     def __init__(self, *args):
         super(BidirectionalLinkedList, self).__init__()
 
@@ -312,76 +323,77 @@ class BidirectionalLinkedList(LinkedListBase):
             self.append(elem)
 
     def prepend(self, elem):
-        pass
+        self._head = self.Node(elem, None, self._head)
+        self._len += 1
+        if self._len == 1: self._tail = self._head
+
+    def append(self, elem):
+        if self._len == 0: return self.prepend(elem)
+        self._tail = self.Node(elem, self._tail, None)
+        self._len += 1
+
+    def insert(self, elem, i):
+        if i <= 0: return self.prepend(elem)
+        if i >= self._len: return self.append(elem)
+
+        p, n = self._head, 0
+        while n + 1 < i:
+            p = p.next
+            n += 1
+
+        p.next = self.Node(elem, p, p.next)
+        self._len += 1
+
+    def del_first(self):
+        if self._len == 0: return
+        self._head = self._head.next
+        self._head.prev = None
+        self._len -= 1
+
+    def del_last(self):
+        if self._len == 0: return
+        self._tail = self._tail.prev
+        self._tail.next = None
+        self._len -= 1
+
+    def remove(self, i):
+        if i <= 0: return self.del_first()
+        if i >= self._len - 1: self.del_last()
+
+        p, n = self._head, 0
+        while n + 1 < i:
+            p = p.next
+            n += 1
+
+        p.next = p.next.next
+        p.next.next.prev = p
+        self._len -= 1
+
+    def reverse(self):
+        self._tail = self._head
+        p = None
+        while self._head is not None:
+            tmp = self._head
+            self._head = self._head.next
+            tmp.next = p
+            tmp.prev = self._head
+            p = tmp
+        self._head = p
+        self._head.prev = None
+
+    def merge(self, b_list):
+        if not isinstance(b_list, BidirectionalLinkedList):
+            raise TypeError('The input must be a LinkedList!')
+
+        b_list._head.prev = self._tail
+        self._tail.next = b_list._head
+        self._tail = b_list._tail
+        self._len += b_list.length
 
 
 if __name__ == '__main__':
-    def test_single_directional_list():
-        l = LinkedList()
-
-        # prepend some elements
-        l.prepend(3)
-        l.prepend(2)
-        l.prepend(1)
-        print('After prepend:', l)
-
-        # append some elements
-        l.append(4)
-        l.append(5)
-        l.append(6)
-        print('After append:', l)
-
-        # insert some elements
-        print('Length of list:', len(l))
-        l.insert('<start>', 0)  # insert as first element
-        print('After insert:', l)
-        l.insert('<end>', len(l))  # insert as last element
-        print('After insert:', l)
-        l.insert('<mid>', 3),  # insert in middle
-        print('After insert:', l)
-
-        # del the first element
-        l.del_first()
-        print('After del first:', l)
-
-        # del the last element
-        l.del_last()
-        print('After del last:', l)
-
-        # remove a element in middle
-        l.remove(2)
-        print('After remove:', l)
-
-        # search the index of  value `6` in l
-        print('the index of value 8 in l is:', l.search(6))
-
-        # squared each element in l
-        l.for_each(lambda x: x ** 2)
-        print('After squared:', l)
-
-        # use bracket for indexing and signing
-        l[0] = 'start'
-        print('After signing value:', l)
-        print('Indexing at position 6:', l[6])
-
-        # reverse a list
-        l.reverse()
-        print('After reverse:', l)
-
-        # merge two lists
-        l2 = LinkedList(1, 2, 3)
-        print('New list to be merged:', l2)
-        l.merge(l2)
-        print('After merging l2:', l)
-        print('After merging, total length is:', l.length)
-
-        # get the value in middle of a list
-        m = l.get_mid()
-        print('The value in middle of l is:', m)
-
-
-    def test_cycle_list():
-        l = CycleList()
+    def test_list(l):
+        l = BidirectionalLinkedList()
 
         # prepend some elements
         l.prepend(3)
@@ -420,12 +432,14 @@ if __name__ == '__main__':
         l.for_each(lambda x: x ** 2)
         print('Squared list:', l)
 
-        # reverse
+        # reverse list
+        l.reverse()
+        print('After reverse:', l)
         l.reverse()
         print('After reverse:', l)
 
         # merge with another cycle list b
-        l2 = CycleList(1, 2, 3)
+        l2 = BidirectionalLinkedList(1, 2, 3)
         print('l2:', l2)
         l.merge(l2)
         print('After merge:', l)
@@ -434,5 +448,6 @@ if __name__ == '__main__':
         m = l.get_mid()
         print('value in middle is:', m)
 
-    # test_single_directional_list()
-    # test_cycle_list()
+
+    l = BidirectionalLinkedList()
+    test_list(l)
