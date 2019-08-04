@@ -23,6 +23,8 @@ Some abstract methods:
 
 
 class LinkedListBase(object):
+    """Base class for LinkedList family"""
+
     class Node(object):
         """Meta class for linked structure"""
 
@@ -48,14 +50,6 @@ class LinkedListBase(object):
         """Return True if List is empty.  O(1)"""
         return self._head is None
 
-    def __str__(self):
-        s = '['
-        p = self._head
-        while p is not None:
-            s += ' ' + str(p.value)
-            p = p.next
-        return s + ' ]'
-
 
 class LinkedList(LinkedListBase):
     """Implementation of LinkedList__single direction"""
@@ -65,6 +59,14 @@ class LinkedList(LinkedListBase):
 
         for elem in args:
             self.append(elem)
+
+    def __str__(self):
+        s = '['
+        p = self._head
+        while p is not None:
+            s += ' ' + str(p.value)
+            p = p.next
+        return s + ' ]'
 
     def prepend(self, elem):
         """Prepend the element as the first one in the list while keeping the order of structure. O(1)"""
@@ -189,6 +191,40 @@ class LinkedList(LinkedListBase):
         return p.value
 
 
+class CycleList(LinkedListBase):
+    def __init__(self, *args):
+        super(CycleList, self).__init__()
+
+        for elem in args:
+            self.append(elem)
+
+    def __str__(self):
+        s = '['
+        p = self._head
+        while True:
+            s += ' ' + str(p.value)
+            if p == self._tail: break
+            p = p.next
+        return s + ' ]'
+
+    def prepend(self, elem):
+        self._head = self.Node(elem, self._head)
+        self._len += 1
+
+        if self._len == 1:
+            self._tail = self._head
+            self._tail.next = self._head
+
+    def append(self, elem):
+        if self.length == 0:
+            return self.prepend(elem)
+
+        self._tail.next = self.Node(elem, self._head)
+        self._tail = self._tail.next
+        self._len += 1
+        pass
+
+
 if __name__ == '__main__':
     def test_single_directional_list():
         l = LinkedList()
@@ -253,6 +289,20 @@ if __name__ == '__main__':
 
 
     def test_cycle_list():
-        pass
+        l = CycleList()
 
-    test_single_directional_list()
+        # prepend some elements
+        # l.prepend(3)
+        # l.prepend(2)
+        # l.prepend(1)
+        # print('After prepend:', l)
+
+        # append some elements
+        l.append(4)
+        l.append(5)
+        l.append(6)
+        print('After append:', l)
+
+
+    # test_single_directional_list()
+    test_cycle_list()
