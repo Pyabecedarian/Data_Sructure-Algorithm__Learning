@@ -451,3 +451,19 @@ if __name__ == '__main__':
 
     l = BidirectionalLinkedList()
     test_list(l)
+
+    """
+    After prepend: [ 1 2 3 ]
+    After append: [ 1 2 3 4 5 6 ]
+    After insert: [ start 1 2 mid 3 4 5 6 end ]
+    After delete first: [ 1 2 mid 3 4 5 6 end ]
+    After delete last: [ 1 2 mid 3 4 5 6 ]
+    After remove element at position `2`: [ 1 2 3 4 5 6 ]
+    index is: 5
+    Squared list: [ 1 4 9 16 25 36 ]
+    After reverse: [ 36 25 16 9 4 1 ]
+    After reverse: [ 1 4 9 16 25 36 ]
+    l2: [ 1 2 3 ]
+    After merge: [ 1 4 9 16 25 36 1 2 3 ]
+    value in middle is: 25
+    """
