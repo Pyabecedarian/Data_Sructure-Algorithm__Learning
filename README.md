@@ -15,11 +15,11 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   -  Merge two *ordered* List to one *ordered* List
   -  Get the node in *middle* of a List
   
- - ***Exercise***:
+- ***Exercise***
   - **[Three Sum](https://leetcode.com/problems/3sum/)**
   - **[Majority Element](https://leetcode.com/problems/majority-element/)**
   - **[Missing Positive](https://leetcode.com/problems/first-missing-positive/)**(optional)
   - **[Linked List Cycle I](https://leetcode.com/problems/linked-list-cycle/)**
   - **[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)**
-  
-- **[Solutions](xxx)**
+
+  - **[Solutions](xxx)**
