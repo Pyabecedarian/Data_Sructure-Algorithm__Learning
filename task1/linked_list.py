@@ -50,6 +50,15 @@ class LinkedListBase(object):
         """Return True if List is empty.  O(1)"""
         return self._head is None
 
+    def get_mid(self):
+        """Return the middle value of the list. O(n)"""
+        p = self._head
+        n = 0
+        while n < self._len - 1:
+            p = p.next
+            n += 2
+        return p.value
+
 
 class LinkedList(LinkedListBase):
     """Implementation of LinkedList__single direction"""
@@ -88,7 +97,7 @@ class LinkedList(LinkedListBase):
     def insert(self, elem, i):
         """Insert the element at index `i` while keeping the order of the structure unchanged. O(n)"""
         if i <= 0: return self.prepend(elem)
-        if i >= self._len - 1: return self.append(elem)
+        if i >= self._len: return self.append(elem)
 
         p, n = self._head, 0
         while n + 1 < i:
@@ -181,15 +190,6 @@ class LinkedList(LinkedListBase):
         self._tail = b_list._tail
         self._len += len(b_list)
 
-    def get_mid(self):
-        """Return the middle value of the list. O(n)"""
-        p = self._head
-        n = 0
-        while n < self._len - 1:
-            p = p.next
-            n += 2
-        return p.value
-
 
 class CycleList(LinkedListBase):
     def __init__(self, *args):
@@ -222,6 +222,96 @@ class CycleList(LinkedListBase):
         self._tail.next = self.Node(elem, self._head)
         self._tail = self._tail.next
         self._len += 1
+
+    def insert(self, elem, i):
+        if i <= 0: return self.prepend(elem)
+        if i >= self._len: return self.append(elem)
+
+        p, n = self._head, 0
+        while True:
+            if n + 1 == i:
+                p.next = self.Node(elem, p.next)
+                self._len += 1
+                break
+            p = p.next
+            n += 1
+
+    def del_first(self):
+        if self._len == 0: return
+        self._head = self._head.next
+        self._tail.next = self._head
+        self._len -= 1
+
+    def del_last(self):
+        if self._len == 0: return
+
+        p = self._head
+        while p.next != self._tail:
+            p = p.next
+
+        self._tail = p
+        self._tail.next = self._head
+        self._len -= 1
+
+    def remove(self, i):
+        if i <= 0: return self.del_first()
+        if i >= self._len - 1: return self.del_last()
+
+        p, n = self._head, 0
+        while n + 1 < i:
+            p = p.next
+            n += 1
+
+        p.next = p.next.next
+        self._len -= 1
+
+    def search(self, elem):
+        p, n = self._head, 0
+        while n < self._len:
+            if p.value == elem:
+                return n
+            p = p.next
+            n += 1
+        return -1
+
+    def for_each(self, func, *args, **kwargs):
+        p = self._head
+        while True:
+            p.value = func(p.value, *args, **kwargs)
+            if p == self._tail: break
+            p = p.next
+
+    def reverse(self):
+        p = self._tail
+        self._tail = self._head
+
+        while True:
+            tmp = self._head
+            self._head = tmp.next
+            tmp.next = p
+            p = tmp
+            if self._head == self._tail: break
+
+        self._head = p
+
+    def merge(self, b_list):
+        if not isinstance(b_list, CycleList):
+            raise TypeError('The input must be a LinkedList!')
+
+        self._tail.next = b_list._head
+        self._tail = b_list._tail
+        self._tail.next = self._head
+        self._len += len(b_list)
+
+
+class BidirectionalLinkedList(LinkedListBase):
+    def __init__(self, *args):
+        super(BidirectionalLinkedList, self).__init__()
+
+        for elem in args:
+            self.append(elem)
+
+    def prepend(self, elem):
         pass
 
 
@@ -244,7 +334,9 @@ if __name__ == '__main__':
         # insert some elements
         print('Length of list:', len(l))
         l.insert('<start>', 0)  # insert as first element
-        l.insert('<end>', 6)  # insert as last element
+        print('After insert:', l)
+        l.insert('<end>', len(l))  # insert as last element
+        print('After insert:', l)
         l.insert('<mid>', 3),  # insert in middle
         print('After insert:', l)
 
@@ -292,10 +384,10 @@ if __name__ == '__main__':
         l = CycleList()
 
         # prepend some elements
-        # l.prepend(3)
-        # l.prepend(2)
-        # l.prepend(1)
-        # print('After prepend:', l)
+        l.prepend(3)
+        l.prepend(2)
+        l.prepend(1)
+        print('After prepend:', l)
 
         # append some elements
         l.append(4)
@@ -303,6 +395,44 @@ if __name__ == '__main__':
         l.append(6)
         print('After append:', l)
 
+        # insert some elements
+        l.insert('start', 0)
+        l.insert('end', len(l))
+        l.insert('mid', 3)
+        print('After insert:', l)
+
+        # delete first element
+        l.del_first()
+        print('After delete first:', l)
+
+        # delete last element
+        l.del_last()
+        print('After delete last:', l)
+
+        # remove element at index `i`
+        l.remove(2)
+        print('After remove element at position `2`:', l)
+
+        # search the index of value 6
+        print('index is:', l.search(6))
+
+        # squared list
+        l.for_each(lambda x: x ** 2)
+        print('Squared list:', l)
+
+        # reverse
+        l.reverse()
+        print('After reverse:', l)
+
+        # merge with another cycle list b
+        l2 = CycleList(1, 2, 3)
+        print('l2:', l2)
+        l.merge(l2)
+        print('After merge:', l)
+
+        # get the middle node value in the list
+        m = l.get_mid()
+        print('value in middle is:', m)
 
     # test_single_directional_list()
-    test_cycle_list()
+    # test_cycle_list()
