@@ -44,6 +44,10 @@ class LinkedListBase(object):
         """Return the length of the list. O(1)"""
         return self._len
 
+    def is_empty(self):
+        """Return True if List is empty.  O(1)"""
+        return self._head is None
+
     def __str__(self):
         s = '['
         p = self._head
@@ -61,10 +65,6 @@ class LinkedList(LinkedListBase):
 
         for elem in args:
             self.append(elem)
-
-    def is_empty(self):
-        """Return True if List is empty.  O(1)"""
-        return self._head is None
 
     def prepend(self, elem):
         """Prepend the element as the first one in the list while keeping the order of structure. O(1)"""
@@ -254,3 +254,5 @@ if __name__ == '__main__':
 
     def test_cycle_list():
         pass
+
+    test_single_directional_list()
