@@ -9,9 +9,9 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   -  Merge two *ordered* array into one *ordered* array
   -  Learn the concept of *Hash*, and complete the problem **"Two Sum"** on Leecode and **Happy Number** (optional)
   
-- ***List***:
-  -  Implement *List*, *Cycle List*, *Bidirectional List*, with adding and deleting element
-  -  Reverse a *List*
+- ***Linked List***:
+  -  Implement *Linked List*, *Cycle List*, *Bidirectional List*, with adding and deleting element
+  -  Reverse a *Linked List*
   -  Merge two *ordered* List to one *ordered* List
   -  Get the node in *middle* of a List
   
