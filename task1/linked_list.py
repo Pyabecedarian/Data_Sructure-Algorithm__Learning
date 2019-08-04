@@ -32,6 +32,9 @@ class LinkedListBase(object):
             self.value = value
             self.next = __next__
 
+        def __str__(self):
+            return str(self.value)
+
     def __init__(self):
         self._len = 0
         self._head = None
@@ -182,13 +185,37 @@ class LinkedList(LinkedListBase):
         self._head = p
 
     def merge(self, b_list):
-        """Merge this list with another list `b` into a new list, keeping their original order."""
-        if not isinstance(b_list, LinkedList):
+        """Merge the list `a` with another list `b` into a new list, keeping their original order, where
+         a and b are both numerical ordered, and return this new merged list."""
+        if not isinstance(b_list, LinkedListBase):
             raise TypeError('The input must be a LinkedList!')
 
-        self._tail.next = b_list._head
-        self._tail = b_list._tail
-        self._len += len(b_list)
+        new_list = LinkedList()
+
+        n = 0
+        p1, p2 = self._head, b_list._head
+
+        while n <= self._len + len(b_list):
+            if p1 is None:
+                while p2 is not None:
+                    new_list.append(p2.value)
+                    p2 = p2.next
+                break
+
+            elif p2 is None:
+                while p1 is not None:
+                    new_list.append(p1.value)
+                    p1 = p1.next
+                break
+
+            elif p1.value <= p2.value:
+                new_list.append(p1.value)
+                p1 = p1.next
+            else:
+                new_list.append(p2.value)
+                p2 = p2.next
+
+        return new_list
 
 
 class CycleList(LinkedListBase):
@@ -393,8 +420,6 @@ class BidirectionalLinkedList(LinkedListBase):
 
 if __name__ == '__main__':
     def test_list(l):
-        l = BidirectionalLinkedList()
-
         # prepend some elements
         l.prepend(3)
         l.prepend(2)
@@ -438,19 +463,27 @@ if __name__ == '__main__':
         l.reverse()
         print('After reverse:', l)
 
-        # merge with another cycle list b
-        l2 = BidirectionalLinkedList(1, 2, 3)
-        print('l2:', l2)
-        l.merge(l2)
-        print('After merge:', l)
-
         # get the middle node value in the list
         m = l.get_mid()
         print('value in middle is:', m)
 
 
-    l = BidirectionalLinkedList()
-    test_list(l)
+    l = LinkedList()
+    # l = CycleList()
+    # l = BidirectionalLinkedList()
+    # test_list(l)
+
+    l1 = LinkedList(5, 7, 9, 18, 20)
+    l2 = LinkedList(6, 10, 21, 30)
+    print('l1:', l1)
+    print('l2:', l2)
+
+    # merge l1 and l2
+    new_l = l1.merge(l2)
+    print('merged list:', new_l)
+    print('Whether l1 or l2 is changed:')
+    print('l1:', l1)
+    print('l2:', l2)
 
     """
     After prepend: [ 1 2 3 ]
