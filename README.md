@@ -3,7 +3,7 @@
 This repo records the progress of learning "Data Structure and Algorithm in Python", task by task, along with some solutions on serval Problem Sets on [Leecode](https://leetcode-cn.com/profile/points/).
 
 
-## Task1: Array and List (2 days)  ---- (INCOMPLETE)
+## Task1: Array and List (2 days)  
 - ***Array***:  Implement a array capable of dynamic scalling
   -  An array of *fixed* size, which supports "Add", "Delete" and "Edit" operations
   -  Merge two *ordered* array into one *ordered* array
@@ -23,3 +23,17 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - **[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)**
 
   - **[Solutions](xxx)**
+
+## Task2： Stack, Queue and Recursion
+- ***Stack***
+  - Implement a stack using Array
+  - Implement a stack using Linked List
+  - Minic 'forward' and 'backward' using stack (optional)
+- ***Queue***
+  - Implement a queue using Array
+  - Implement a queue using Linked List
+  - Implement a cycle queue
+- ***Recursion***
+  - Implement Fibonacci array using recursion
+  - Calculate n!
+  - Sort a collection of data
