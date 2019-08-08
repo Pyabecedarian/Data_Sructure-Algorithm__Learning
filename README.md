@@ -15,7 +15,7 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   -  Merge two *ordered* List to one *ordered* List
   -  Get the node in *middle* of a List
   
-- ***Exercise***
+- ***Exercises***
   - **[Three Sum](https://leetcode.com/problems/3sum/)**
   - **[Majority Element](https://leetcode.com/problems/majority-element/)**
   - **[Missing Positive](https://leetcode.com/problems/first-missing-positive/)**(optional)
@@ -37,3 +37,14 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - Implement Fibonacci array using recursion
   - Calculate n!
   - Sort a collection of data
+- ***Exercises***
+  - *Stack*
+    - **[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)**
+    - **[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)**
+    - **[Evaluate Reverse Polish Notatio](https://leetcode.com/problems/evaluate-reverse-polish-notation/)**
+  - *Queue*
+    - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)
+    - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
+    - **[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)**
+  - **[Solutions](xxx)**
+  
