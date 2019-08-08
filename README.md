@@ -28,7 +28,7 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
 - ***Stack***
   - Implement a stack using Array
   - [Implement a stack using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/stack.py)
-  - Minic 'forward' and 'backward' using stack (optional)
+  - Minic web browser's `forward` and `backward` action for browsing history using stack (optional)
 - ***Queue***
   - Implement a queue using Array
   - [Implement a queue using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/queue.py)
