@@ -34,8 +34,8 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - [Implement a queue using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/queue.py)
   - Implement a cycle queue
 - ***Recursion***
-  - Implement Fibonacci array using recursion
-  - Calculate n!
+  - [Implement Fibonacci array using recursion](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/fibonacci.py)
+  - [Calculate n!](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/calc_n_fac.py)
   - Sort a collection of data
 - ***Exercises***
   - *Stack*
