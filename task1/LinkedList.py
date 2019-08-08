@@ -12,7 +12,7 @@ class LinkedList(LinkedListBase):
 
         if 'size' in kwargs:
             for i in range(kwargs['size']):
-                self.append(0)
+                self.append(None)
 
     def extend(self, b_list):
         if not isinstance(b_list, LinkedList):
@@ -39,25 +39,39 @@ class LinkedList(LinkedListBase):
 
     def del_first(self):
         """Delete the first element. O(1)"""
-        if self._len == 0: return
+        if self.is_empty(): return
+        first = self._head.value
+
+        if self._len == 1:
+            self._head = None
+            self._tail = None
+            return first
 
         self._head = self._head.next
+
         self._len -= 1
+        return first
 
     def del_last(self):
         """Delete the last element. O(n)"""
         if self.is_empty(): return
+
+        if self._len == 1:
+            last = self._head.value
+            self._head = None
+            self._tail = None
+            return last
 
         p, n = self._head, 0
         while n + 1 < len(self) - 1:
             p = p.next
             n += 1
 
-        from copy import deepcopy
-        last = deepcopy(p.next)
+        last = p.next.value
         self._tail = p
         self._tail.next = None
         self._len -= 1
+
         return last
 
     def pop(self):
@@ -175,10 +189,10 @@ if __name__ == '__main__':
         print('After pop:', l)
 
 
-    # l = LinkedList()
+    l = LinkedList()
     # l = CycleList()
     # l = BidirectionalLinkedList()
-    # test_list(l)
+    test_list(l)
 
     # l1 = LinkedList(5, 7, 9, 18, 20)
     # l2 = LinkedList(6, 10, 21, 30)
@@ -192,6 +206,3 @@ if __name__ == '__main__':
     # print('l1:', l1)
     # print('l2:', l2)
 
-    # size
-    l = LinkedList(size=4)
-    print(l)
