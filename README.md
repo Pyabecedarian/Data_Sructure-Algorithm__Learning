@@ -27,7 +27,7 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
 ## Task2： Stack, Queue and Recursion
 - ***Stack***
   - Implement a stack using Array
-  - Implement a stack using Linked List
+  - [Implement a stack using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/stack.py)
   - Minic 'forward' and 'backward' using stack (optional)
 - ***Queue***
   - Implement a queue using Array
