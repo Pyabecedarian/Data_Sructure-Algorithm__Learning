@@ -1,7 +1,7 @@
 """
 Array： dynamic scaling array
 """
-
+import ctypes
 
 class Array(object):
     def __init__(self, size):
