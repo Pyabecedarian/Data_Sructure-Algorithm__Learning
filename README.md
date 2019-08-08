@@ -3,7 +3,7 @@
 This repo records the progress of learning "Data Structure and Algorithm in Python", task by task, along with some solutions on serval Problem Sets on [Leecode](https://leetcode-cn.com/profile/points/).
 
 
-## Task1: Array and List (2 days)  
+## Task1: Array and List (2 Days)  
 - ***Array***:  Implement a array capable of dynamic scalling
   -  An array of *fixed* size, which supports "Add", "Delete" and "Edit" operations
   -  Merge two *ordered* array into one *ordered* array
@@ -24,18 +24,18 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
 
   - **[Solutions](xxx)**
 
-## Task2： Stack, Queue and Recursion
+## Task2： Stack, Queue and Recursion (4 Days)
 - ***Stack***
   - Implement a stack using Array
-  - Implement a stack using Linked List
-  - Minic 'forward' and 'backward' using stack (optional)
+  - [Implement a stack using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/stack.py)
+  - Minic web browser's `forward` and `backward` action for browsing history using stack (optional)
 - ***Queue***
   - Implement a queue using Array
   - [Implement a queue using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/queue.py)
   - Implement a cycle queue
 - ***Recursion***
-  - Implement Fibonacci array using recursion
-  - Calculate n!
+  - [Implement Fibonacci array using recursion](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/fibonacci.py)
+  - [Calculate n!](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/calc_n_fac.py)
   - Sort a collection of data
 - ***Exercises***
   - *Stack*
@@ -43,8 +43,8 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
     - **[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)**
     - **[Evaluate Reverse Polish Notatio](https://leetcode.com/problems/evaluate-reverse-polish-notation/)**
   - *Queue*
-    - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)
+    - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)**
     - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
     - **[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)**
-  - **[Solutions](xxx)**
+  - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task2)**
   
