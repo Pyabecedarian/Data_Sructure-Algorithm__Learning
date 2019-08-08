@@ -43,8 +43,8 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
     - **[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)**
     - **[Evaluate Reverse Polish Notatio](https://leetcode.com/problems/evaluate-reverse-polish-notation/)**
   - *Queue*
-    - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)
+    - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)**
     - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
     - **[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)**
-  - **[Solutions](xxx)**
+  - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task2)**
   
