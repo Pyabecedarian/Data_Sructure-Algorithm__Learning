@@ -31,7 +31,7 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - Minic 'forward' and 'backward' using stack (optional)
 - ***Queue***
   - Implement a queue using Array
-  - Implement a queue using Linked List
+  - [Implement a queue using Linked List](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/blob/master/task2/queue.py)
   - Implement a cycle queue
 - ***Recursion***
   - Implement Fibonacci array using recursion
