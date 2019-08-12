@@ -60,4 +60,4 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
   - **[Sqrt(x)](https://leetcode.com/problems/sqrtx/)**
   
-  - **[Solutions](xx)**
+  - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task3)**
