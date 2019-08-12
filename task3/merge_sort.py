@@ -1,5 +1,11 @@
 """
 Merge Sort
+
+    Contains two procedure:
+        1. half hte sequence until each sequence only has 1 element, which means each sequence
+            has already been sorted;
+
+        2. merge those sequences, keep there original order.
 """
 
 
