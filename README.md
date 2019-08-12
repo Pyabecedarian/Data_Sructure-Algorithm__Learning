@@ -45,6 +45,19 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - *Queue*
     - **[Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)**
     - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
+  - *Recursion*
     - **[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)**
   - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task2)**
   
+## Task3: Sort and Binary Search (3 Days)
+- ***Sort***
+  - Implement *Merge Sort*, *Quick Sort*, *Bubble Sort*, *Selection Sort*, *Heap Sort*
+  - Find the K-th largest element from a collection of numbers with time complexity *O(n)*
+- ***Binary Search***
+  - Implement Binary Search on a sorted array of numbers
+  - Implement fuzzy binary search algorithm
+- ***Exercises***
+  - **[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)**
+  - **[Sqrt(x)](https://leetcode.com/problems/sqrtx/)**
+  
+  - **[Solutions](xx)**
