@@ -16,7 +16,7 @@ Sqrt(a):
 def sqrt_newton(a):
     """Newton Method"""
     epsilon = 0.001  # error
-    x = 10.  # randomly initiated value, but not 0
+    x = 10.  # randomly initialized value, but not 0
     n = 0    # iteration number
 
     while x * x - a > epsilon or a - x * x > epsilon:
