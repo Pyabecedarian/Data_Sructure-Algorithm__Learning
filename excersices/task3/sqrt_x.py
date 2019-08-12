@@ -15,8 +15,8 @@ Sqrt(a):
 
 def sqrt_newton(a):
     """Newton Method"""
-    epsilon = 0.001  # error
-    x = 10.  # randomly initialized value, but not 0
+    epsilon = 0.0001  # error
+    x = 0.01  # randomly initialized value, but not 0
     n = 0    # iteration number
 
     while x * x - a > epsilon or a - x * x > epsilon:
@@ -28,8 +28,8 @@ def sqrt_newton(a):
 
 def sqrt_binary_search(a):
     """Binary Search"""
-    epsilon = 0.001
-    x = 10.
+    epsilon = 0.0001
+    x = 0.01
     n = 0
 
     low = 0
@@ -47,5 +47,5 @@ def sqrt_binary_search(a):
 
 
 if __name__ == '__main__':
-    print(sqrt_newton(789))         # (28.08914381289573, 5)
-    print(sqrt_binary_search(789))  # (28.089148193597794, 25)
+    print(sqrt_newton(123))         # (11.090536506412686, 14)
+    print(sqrt_binary_search(123))  # (11.090540114641188, 23)
