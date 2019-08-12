@@ -50,10 +50,10 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task2)**
   
 ## Task3: Sort and Binary Search (3 Days)
-- ***Sort***
+- ***[Sort](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task3)***
   - Implement *Merge Sort*, *Quick Sort*, *Bubble Sort*, *Selection Sort*, *Heap Sort*
   - Find the K-th largest element from a collection of numbers with time complexity *O(n)*
-- ***Binary Search***
+- ***[Binary Search](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task3)***
   - Implement Binary Search on a sorted array of numbers
   - Implement fuzzy binary search algorithm
 - ***Exercises***
