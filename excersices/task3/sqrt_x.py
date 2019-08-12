@@ -1,5 +1,5 @@
 """
-Sqrt(x):
+Sqrt(a):
 
     Method 1:  Newton Method:
     <==>  x = (a)^1/2  <==>  x^2 = a  <==>  f(x) = x^2 - a = 0
