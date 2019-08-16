@@ -61,3 +61,9 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - **[Sqrt(x)](https://leetcode.com/problems/sqrtx/)**
   
   - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task3)**
+
+## Task4: Hashing and String (4 Days)
+- ***[Hashing](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task4)***
+  - Implement a HashTable, use LinkedList to solve Hash Collision
+  - Implement a LRU (Least Recently Used)
+- ***[String]()***
