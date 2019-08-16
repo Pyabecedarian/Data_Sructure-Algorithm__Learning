@@ -74,9 +74,25 @@ class LinkedList(LinkedListBase):
 
         return last
 
-    def pop(self):
-        """An alias of del_last()"""
-        return self.del_last()
+    def pop(self, value=None):
+        if value is None or len(self) <= 1:
+            return self.del_last()
+
+        p_prev = None
+        p = self._head
+        while p is not None:
+            if p.value == value:
+                if p_prev is None:
+                    return self.del_first()
+                elif p.next is None:
+                    return self.del_last()
+                else:
+                    p_prev.next = p.next
+                    self._len -= 1
+                    return p.value
+            else:
+                p_prev = p
+                p = p.next
 
     def remove(self, i):
         """Remove an element at index `i`.  O(n)"""
@@ -87,8 +103,11 @@ class LinkedList(LinkedListBase):
         while n + 1 < i:
             p = p.next
             n += 1
+
+        tmp = p.next
         p.next = p.next.next
         self._len -= 1
+        return tmp
 
     def reverse(self):
         """Reverse the order of List. O(n)"""
@@ -205,4 +224,3 @@ if __name__ == '__main__':
     # print('Whether l1 or l2 is changed:')
     # print('l1:', l1)
     # print('l2:', l2)
-

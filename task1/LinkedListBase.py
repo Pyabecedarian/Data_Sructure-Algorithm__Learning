@@ -39,7 +39,6 @@ class LinkedListBase(object):
         self._len = 0
         self._head = None
         self._tail = None
-        self._n = -1
 
     def __str__(self):
         if self.is_empty(): return '[ ]'
@@ -81,6 +80,7 @@ class LinkedListBase(object):
         return p.value
 
     def __iter__(self):
+        self._n = -1
         return self
 
     def __next__(self):
