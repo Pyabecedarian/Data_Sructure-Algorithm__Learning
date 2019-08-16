@@ -50,6 +50,6 @@ if __name__ == '__main__':
     print(lru)
 
     # if operate on existed data
-    # lru['3rd'] = 33
-    # print(lru)
-    # print(lru['3rd'])
+    lru['3rd'] = 33
+    print(lru)
+    print(lru['3rd'])

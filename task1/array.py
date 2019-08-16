@@ -113,3 +113,5 @@ if __name__ == '__main__':
     # Pop last value
     a.pop()
     print(a)       #
+
+    print(a[8])

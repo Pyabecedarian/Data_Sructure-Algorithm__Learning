@@ -113,6 +113,8 @@ class LinkedListBase(object):
             n += 1
 
     def search(self, elem):
+        if self.is_empty(): return -1
+
         p, n = self._head, 0
         while n < self._len:
             if p.value == elem:
