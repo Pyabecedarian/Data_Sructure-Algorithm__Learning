@@ -67,3 +67,9 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - Implement a HashTable, use LinkedList to solve Hash Collision
   - Implement a LRU (Least Recently Used)
 - ***[String]()***
+
+## Task5: Binary Tree and Binary Heap
+- ***[Binary Tree](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task5)***
+  - Implement a Binary Tree
+  - Implement Binary Tree Traversals in `preorder`, `inorder` and `postorder`
+- ***[Binary Heap]()***
