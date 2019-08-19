@@ -83,3 +83,5 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
   - **[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)** (optional)
   - **[Path Sum](https://leetcode.com/problems/path-sum/)**
   
+  - **[Solutions](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/excersices/task5)**
+  
