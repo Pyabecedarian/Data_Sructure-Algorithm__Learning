@@ -72,4 +72,14 @@ This repo records the progress of learning "Data Structure and Algorithm in Pyth
 - ***[Binary Tree](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task5)***
   - Implement a Binary Tree
   - Implement Binary Tree Traversals in `preorder`, `inorder` and `postorder`
-- ***[Binary Heap]()***
+- ***[Binary Heap](https://github.com/Pyabecedarian/Data_Sructure-Algorithm__Learning/tree/master/task5)***
+  - Implement a MinHeap, MaxHeap and Priority Queue
+  - Implement Heap Sorting
+  - Merge k sorted arrays using Priority Queue
+  - Find the Top k Maximum from a set of data
+- ***Exercises****
+  - **[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)**
+  - **[Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)**
+  - **[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)** (optional)
+  - **[Path Sum](https://leetcode.com/problems/path-sum/)**
+  
