@@ -129,7 +129,7 @@ class BinarySearchTree(object):
         return self.size
 
     def to_sequence(self):
-        """Put the keys and values of bst into a list from top to bottom order"""
+        """Put the keys and values of bst into lists from top to bottom order"""
         queue = [self.root]
         seq_k = []
         seq_v = []
