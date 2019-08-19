@@ -47,7 +47,7 @@ class BinHeap(object):
 
     def build_from_list(self, aList):
         """
-        One can build a heap by just inserting an item one at a time.
+        One can build a heap by just inserting items one at a time.
         This process is at O(log_n) ops. Since inserting an item in
         middle of a list will cause O(n) ops, thus the whole process
         will finally cost O(n*log_n).

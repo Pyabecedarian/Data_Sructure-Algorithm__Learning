@@ -17,6 +17,7 @@ from task1.LinkedList import LinkedList
 
 class Stack(object):
     """Implement stack using LinkedList"""
+
     def __init__(self):
         self._items = LinkedList()
 
@@ -42,15 +43,13 @@ class Stack(object):
 
 if __name__ == '__main__':
     s = Stack()
-    print('S is empty:',  s.isEmpty())
+    print('S is empty:', s.isEmpty())
     print('Put some values:')
     s.push(2)
     s.push(4)
-    s.push('Hello')
     print('After push:', s)
     print('Size:', s.size)
-    s.push(0.98)
-    print('Now stack is:',s)
+    print('Now stack is:', s)
     print('Pop a value:', s.pop())
     print('Pop a value:', s.pop())
     print('After pop:', s)
